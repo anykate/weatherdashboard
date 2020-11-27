@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}
+Dashboard | Home
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4 d-flex justify-content-center align-items-center text-center" id="sidebar">
+			<!-- Side Bar -->
+			{% include '_sidebar.html' %}
+		</div>
+		<div class="col-md-8 d-flex justify-content-center align-items-center text-center">
+			<!-- Card -->
+			<main>
+				{% include '_card.html' %}
+			</main>
+		</div>
+	</div>
+</div>
+{% endblock %}

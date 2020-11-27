@@ -1,0 +1,8 @@
+<div class="container">
+	<p class="lead">What's the weather like?</p>
+	<form action="" method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="btn btn-warning">Search</button>
+	</form>
+</div>

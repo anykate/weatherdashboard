@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;	
+}
+
+#sidebar {
+	min-height: calc(100vh - 17vh);
+	background: linear-gradient(120deg, #fff, #999);
+}
+
+.btn, input {
+	border-radius: 15px !important;
+}
+
+.card-body {
+	width: 500px !important;
+	z-index: inherit;
+}
+
+.card {
+	background-image: url(/static/img/weather.jpg);
+	background-repeat: no-repeat;
+	background-size: 256px 256px;
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
+	background-position: center center;
+	background-blend-mode: hard-light;
+	background-color: transparent;
+}
+
+footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}
