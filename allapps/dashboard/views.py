@@ -69,3 +69,13 @@ def index(request):
                 City.objects.create(name=name)
         return redirect('dashboard:index')
     return render(request, 'dashboard/index.html', {'form': form, 'weather_data': weather_data})
+
+
+def history(request):
+    cities = City.objects.all().order_by('-updated_at')[:5]
+
+    weather_data_list = []
+    for city in cities:
+        weather_data_list.append(get_weather_data(city.name))
+
+    return render(request, 'dashboard/history.html', {'weather_data_list': weather_data_list})

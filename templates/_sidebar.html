@@ -4,5 +4,6 @@
 		{% csrf_token %}
 		{{ form.as_p }}
 		<button type="submit" class="btn btn-warning">Search</button>
+		<a class="btn btn-warning ml-2" type="button" href="{% url 'dashboard:history' %}">History</a>
 	</form>
 </div>

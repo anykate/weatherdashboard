@@ -1,0 +1,30 @@
+{% extends '_base.html' %}
+{% load static %}
+
+
+{% block title %}
+Weather | History
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="{% url 'dashboard:index' %}">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page">History</li>
+			</ol>
+		</nav>
+		{% for weather_data in weather_data_list %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					{% include '_card.html' %}
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
