@@ -5,7 +5,7 @@
 }
 
 #sidebar {
-	min-height: calc(100vh - 17vh);
+	min-height: calc(100vh - 16vh);
 	background: linear-gradient(120deg, #fff, #999);
 }
 
