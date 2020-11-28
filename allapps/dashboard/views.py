@@ -57,15 +57,15 @@ def index(request):
 
     if form.is_valid():
         form.save(commit=False)
-        name = form.cleaned_data['name']
+        name = form.cleaned_data['name'].capitalize()
         weather_data = get_weather_data(name)
         request.session['weather_data'] = weather_data
         if weather_data:
             try:
-                city = City.objects.get(name=name.capitalize())
+                city = City.objects.get(name=name)
                 city.name = name
                 city.save()
             except Exception as e:
-                City.objects.create(name=name.capitalize())
+                City.objects.create(name=name)
         return redirect('dashboard:index')
     return render(request, 'dashboard/index.html', {'form': form, 'weather_data': weather_data})
